@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "bf4ff216-f256-4f65-beae-4c8c1c621e9a",
+		"name": "Bajaj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47689025",
+		"_collection_link": "https://marutprishat-2867155.postman.co/workspace/Marut-Prishat's-Workspace~540e4ed1-36f8-4244-871e-cd55d6d09f8e/collection/47689025-bf4ff216-f256-4f65-beae-4c8c1c621e9a?action=share&source=collection_link&creator=47689025"
+	},
+	"item": [
+		{
+			"name": "POST SQL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJyZWdObyI6IlJFRzEyMzQ3IiwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwic3ViIjoid2ViaG9vay11c2VyIiwiaWF0IjoxNzU2NDQzNTQ1LCJleHAiOjE3NTY0NDQ0NDV9.1DKgH0838IYrc53sp7uB84PDb1PCvLylkGs5yYyIrUg",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJyZWdObyI6IlJFRzEyMzQ3IiwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwic3ViIjoid2ViaG9vay11c2VyIiwiaWF0IjoxNzU2NDQzNTQ1LCJleHAiOjE3NTY0NDQ0NDV9.1DKgH0838IYrc53sp7uB84PDb1PCvLylkGs5yYyIrUg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"finalQuery\": \"SELECT T1.AMOUNT AS SALARY, CONCAT(T2.FIRST_NAME, ' ', T2.LAST_NAME) AS NAME, YEAR(CURRENT_DATE()) - YEAR(T2.DOB) AS AGE, T3.DEPARTMENT_NAME FROM PAYMENTS AS T1 JOIN EMPLOYEE AS T2 ON T1.EMP_ID = T2.EMP_ID JOIN DEPARTMENT AS T3 ON T2.DEPARTMENT = T3.DEPARTMENT_ID WHERE DAY(T1.PAYMENT_TIME) != 1 ORDER BY T1.AMOUNT DESC LIMIT 1;\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bfhldevapigw.healthrx.co.in/hiring/testWebhook/JAVA",
+					"protocol": "https",
+					"host": [
+						"bfhldevapigw",
+						"healthrx",
+						"co",
+						"in"
+					],
+					"path": [
+						"hiring",
+						"testWebhook",
+						"JAVA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token and Web Socket",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\" name \": \"John Doe\" ,\n\" regNo \": \"REG12347\" ,\n\" email \": \"john@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA",
+					"protocol": "https",
+					"host": [
+						"bfhldevapigw",
+						"healthrx",
+						"co",
+						"in"
+					],
+					"path": [
+						"hiring",
+						"generateWebhook",
+						"JAVA"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
